@@ -27,7 +27,12 @@ import "bootstrap";
 
 // Internal imports
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
+import { toggleDateInputs } from '../plugins/init_booking';
+
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initAutocomplete();
+  toggleDateInputs();
 });
