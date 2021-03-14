@@ -1,0 +1,4 @@
+<%= @bike.make %>
+<%= @bike.model %>
+<%= cl_image_tag @bike.photo.key, height: 300, width: 400, crop: :fill %>
+<%= link_to 'Make a booking', new_bike_booking_path(@bike) %>
