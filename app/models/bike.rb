@@ -1,5 +1,9 @@
 class Bike < ApplicationRecord
   has_many :bookings
+  has_attachments :photos, :maximum => 5
+
+  # validations
+  validates :description, :length { minimum: 180, too_short: "%{count} characters is the minimum length for a description, please give more detail!" }
 
   # geocoder
   geocoded_by :address

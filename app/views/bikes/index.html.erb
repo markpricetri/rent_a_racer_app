@@ -10,13 +10,13 @@
 <% end %>
 
 <% @bikes.each do |bike| %>
-
-  <div>
-    <p><%= bike.make %></p>
-    <p><%= bike.model %></p>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path bike.photo.key, height: 300, crop: :fill %>')">
+    <div>
+      <p><%= bike.make %></p>
+      <p><%= bike.model %></p>
+    </div>
+    <% if policy(bike).edit? %>
+      <%= link_to "Edit", edit_bike_path(bike) %>
+    <% end %>
   </div>
-
-  <% if policy(bike).edit? %>
-    <%= link_to "Edit", edit_bike_path(bike) %>
-  <% end %>
 <% end %>
